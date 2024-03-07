@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Treino
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = 2;
+
+            int H = 0;
+
+            int A1 = 120;
+
+            int A2 = 140;
+            
+            Console.WriteLine("Digite a altura da jovem em cm: ");
+            H = int.Parse(Console.ReadLine());
+            Console.WriteLine(N);
+            Console.WriteLine(A1);
+            Console.WriteLine(A2);
+            if (H >= A1)
+            {
+                N = N + 1;
+            }
+            else
+            {
+                N = N - 1;
+            }
+            if (H >= A2)
+            {
+                N = N + 1; 
+                {
+                    N = N - 1;
+                }
+            }
+            else
+            {
+                N = N - 1;
+            }
+            if(N >= 2)
+            {
+                N = N - 1;
+            }
+
+            if(N == 2 || N == 1)
+            {
+                Console.WriteLine($"Você ir em {N} brinquedos");
+            }
+            else if (N == 0)
+            {
+                Console.WriteLine("A jovem não pode ir em nenhum brinquedo");
+                Console.ReadLine();
+            }
+            {
+                
+            }
+            Console.ReadLine();
+        }
+    }
+}
+    
