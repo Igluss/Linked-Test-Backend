@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace griddelargada
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Coloque o numero de participantes da corrida:");
+            int N = int.Parse(Console.ReadLine());
+
+            int[] Glargada = new int[N];
+            int[] Gchegada = new int[N];
+
+            Console.WriteLine("Coloque o grid de largada dos participantes:");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write($"Carro {i + 1}: ");
+                Glargada[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("Coloque a posicao final de cada participante:");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write($"Carro {i + 1}: ");
+                Gchegada[i] = int.Parse(Console.ReadLine());
+            }
+
+            int Tultrapassagens = Nultrapassagens(Glargada, Gchegada);
+
+            Console.WriteLine($"O total de ultrapassagens nessa corrida foi: {Tultrapassagens}");
+            Console.ReadLine();
+        }
+
+        static int Nultrapassagens(int[] Glargada, int[] Gchegada)
+        {
+            int Tultrapassagens = 0;
+
+            for (int i = 0; i < Glargada.Length; i++)
+            {
+                int ultrapassagens = Glargada[i] - Gchegada[i];
+                Tultrapassagens += Math.Max(ultrapassagens, 0); 
+            }
+
+            return Tultrapassagens;
+            
+
+        }
+    }
+}
