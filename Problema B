@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VOGAIS_E_CONSOANTES
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite uma palavra:");
+            string palavra = Console.ReadLine();
+
+            int numeroVogais = NumeroVogais(palavra);
+            int numeroConsoantes = NumeroConsoantes(palavra);
+
+            Console.WriteLine($"numeros de vogais: {numeroVogais}");
+            Console.WriteLine($"numeros de consoantes: {numeroConsoantes}");
+            Console.ReadLine();
+        }
+
+        static int NumeroVogais(string palavra)
+        {
+            int contador = 0;
+            string vogais = "aeiou";
+
+            foreach (char c in palavra)
+            {
+                if (vogais.Contains(c))
+                {
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+
+        static int NumeroConsoantes(string palavra)
+        {
+            int contador = 0;
+            string consoantes = "bcdfghjklmnpqrstvwxyz";
+
+            foreach (char c in palavra)
+            {
+                if (consoantes.Contains(c))
+                {
+                    contador++;
+                }
+            }
+            
+            return contador;
+
+        }
+
+        
+    }
+}
